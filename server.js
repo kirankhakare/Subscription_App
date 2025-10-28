@@ -18,5 +18,10 @@ app.use("/api/users", userRoutes);
 app.use('/api/products', require('./routes/productRoutes'));
 app.use("/api/subscription", subscriptionRoutes);
 
+app.get("/", (req, res) => {
+  console.log("Server start...");
+  res.send("Backend server is running successfully 🚀");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
